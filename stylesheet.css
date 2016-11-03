@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: San Francisco,
+    -apple-system,
+    BlinkMacSystemFont,
+    ".SFSNText-Regular",
+    Segoe UI,
+    Ubuntu,
+    Helvetica,
+    sans-serif;
+
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.main-sidebar {
+  padding: 20px;
+  height: 100vh;
+  width: 250px;
+  background: #ddd;
+}
+
+.item-panel {
+  position: relative;
+}
+
+.item-panel > .item-panel {
+  margin-left: 25px;
+}
+
+.item-panel-bar {
+  display: flex;
+  align-items: center;
+  padding: 15px 10px;
+  border: 1px solid transparent;
+}
+
+.item-panel-bar > .icon {
+  height: 14px;
+  width: 14px;
+  margin-right: 10px;
+  background: #000;
+  border-radius: 3px;
+}
+
+.item-panel-bar > .heading {
+  margin-bottom: 0;
+  font-weight: 300;
+  font-family: monospace;
+}
+
+.item-panel-bar > .operations {
+  margin-left: auto;
+}
+
+.item-panel.-closed > .item-panel {
+  display: none;
+}
+
+.item-panel.-directory > .item-panel-bar {
+  cursor: pointer;
+}
+
+.item-panel.-directory > .item-panel-bar > .icon {
+  background: 0;
+  border: 2px solid #000;
+}
+
+/*
+// This is counter-intuitive (against principles), because
+// we're supposed to add a modifier to the base component.
+// But this makes it easier to implement (see JS)
+*/
+
+.item-panel-bar.-over {
+  border-color: #000;
+}
+
+.droppable-hook {
+  opacity: 0;
+  border: 2px solid #000;
+}
+
+.droppable-hook.-over {
+  opacity: 1;
+}
+
+.droppable-hook.-undroppable {
+  opacity: 0;
+}
+
+.caret-down {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 4px 0 4px;
+  border-color: #000000 transparent transparent transparent;
+}
+
+.caret-right {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 0 4px 8px;
+  border-color: transparent transparent transparent #000000;
+}
+
+// .item-panel > .item-panel::after {
+//   content: "";
+//   display: block;
+//   position: absolute;
+//   top: 20px;
+//   left: -20px;
+//   width: 10px;
+//   height: 1px;
+//   background: #000;
+// }
+
+// .item-panel > .item-panel > .item-panel-bar::before {
+//   content: "";
+//   display: block;
+//   position: absolute;
+//   top: 0;
+//   left: -20px;
+//   width: 1px;
+//   height: 100%;
+//   background: #000;
+// }
+
+// .item-panel > .item-panel.-closed:nth-last-child(2) > .item-panel-bar::before,
+// .item-panel > .item-panel.-closed > .item-panel-bar:nth-last-child(2)::before {
+//   height: calc(50% - 3px);
+// }
